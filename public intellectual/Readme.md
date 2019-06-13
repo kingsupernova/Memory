@@ -13,10 +13,10 @@ I wasted most of my time on those websites, from now on, I will record some **`"
 >>> 3
 >>>> 4
 
-'''diff
+```diff
 + time flies
 - bullshit
 
-'''
+```
 
 - to be continued.
