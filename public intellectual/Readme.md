@@ -1,4 +1,4 @@
-I wasted most of my time on those websites, from now on, I will record some **"interesting"** posts.
+I wasted most of my time on those websites, from now on, I will record some **'"interesting"'** posts.
 
 # [豆瓣](http://www.douban.com "have a try")
 
