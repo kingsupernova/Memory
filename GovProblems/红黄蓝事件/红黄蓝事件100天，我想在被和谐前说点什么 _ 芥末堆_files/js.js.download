@@ -1,0 +1,69 @@
+ 
+ if(!IsPC())
+ {
+    $(".slider").yxMobileSlider({width:700,height:380,during:3000});
+ }
+
+
+ $(function(){
+    $(".subNav").click(function(){
+        $("#reay").slideToggle(500);
+        // 修改数字控制速度， slideUp(500)控制卷起速度
+        $(this).next(".navContent").slideToggle(5000);
+    })
+
+    //微信隐藏微博
+    if(is_weixn())
+    {
+        $(".weibo").hide();
+        $(".hudong_nav >ul>li").width("49%");
+    }
+});
+
+function showMobileSearch()
+{
+    var t=$("#indexSearch").width();
+    if(t<1)
+    {
+        $("#indexSearch").animate({width:"100%"},500);
+        $("#searchInput").attr("onclick","searchs()");
+        $("#mobileSearch").show();
+    }
+}
+
+
+
+
+ $("#indexmobleLogin").click(function(){
+    $( '.sidebar' ).unbind();
+     $("#indexLogin").fadeIn();
+ })
+
+  $("#closeLogin").click(function(){
+      $("#indexLogin").fadeOut();
+ })
+ 
+ function is_weixn(){  
+    //var ua="Mozilla/5.0 (iPhone; CPU iPhone OS 8_0 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Mobile/12A365 MicroMessenger/6.0 NetType/2G";
+    //ua=ua.toLowerCase();
+    var ua = navigator.userAgent.toLowerCase();  
+    if(ua.match(/micromessenger/i)=="micromessenger") { 
+        return true; 
+     } else { 
+        return false; 
+    } 
+} 
+
+function is_phoneSafari(){
+    var ua = navigator.userAgent.toLowerCase();  
+    //var str="Mozilla/5.0 (iPhone; CPU iPhone OS 9_3_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13E238 Safari/601.1";
+    //str=str.toLowerCase();
+    if((ua.indexOf("iphone")>0)&&(ua.indexOf("safari")>0))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}

@@ -1,0 +1,444 @@
+
+
+function showReply(commentID,commentName,itemId)
+{
+    var id="";
+    if(typeof(itemId)=="undefined")
+    {
+        id=$("#itemId").val();
+    }
+    else
+    {
+        id=itemId;
+    }
+    
+    
+    var display=$("#" + commentID).css('display');
+    
+    if(display=="block")
+    {
+        $("#" + commentID).css('display', 'none');
+    }
+    else
+    {
+        $("#" + commentID).css('display', 'block');
+    }
+    $('#reply' + commentID).val("");
+}
+
+
+
+
+
+
+
+
+function reply(commentID,commentName,itemId) {
+    //TODO页面效果、输入框balabala
+    var id="";
+    if(typeof(itemId)=="undefined")
+    {
+        id=$("#itemId").val();
+    }
+    else
+    {
+        id=itemId;
+    }
+    
+    
+    /*var display=$("#" + commentID).css('display');
+    
+    if(display=="block")
+    {
+        $("#" + commentID).css('display', 'none');
+    }
+    else
+    {
+        $("#" + commentID).css('display', 'block');
+    }
+    var content=$('#reply' + commentID).val();
+    if(content=="")
+    {
+        return ;
+    }
+    
+    console.log(content);
+    
+    return;*/
+
+    $.ajax({
+        url: "/Api/User/comment",
+        type: 'get',
+        data: {'id': id, 'content': $('#reply' + commentID).val(), 'commentId': commentID},
+        dataType: 'json',
+        success: function (data) {
+            if (data['code'] == '000') {
+                console.log(data);
+                $("#" + commentID).css('display', 'none')
+                var picture=data['picture'];
+                var t="";
+                if(picture=="")
+                {
+                    //代表未登录
+                   t='<span class="YK_pic" onclick="checkLogin()"><p>登录找回红脸蛋</p><i></i></span>';
+                }
+                else
+                {
+                    t='<img src="'+picture+'" alt="">';
+                }
+
+                str = "";
+                        str += '<li style="margin-top:50px;"><dl><dt>'+t+'</dt></dl><dd>';
+                        str += '<p><b style="float:left">' + data['name'] + ' 回复 '+commentName+'</b>&nbsp;<span>1秒前</span></p>';
+                        str += '<p class="xiangxi">' + $('#reply' + commentID).val() + '</p><div class="reSend">';
+                        str += '<p id="like' + data['id'] + '" onclick="like(' + data['id'] + ', 1, \'com\')">赞(<span id="likeCot' + data['id'] + '">0</span>)</p>';
+                        
+                        str += '<p onclick="showReply(' + data['id'] + ',\''+data['name']+'\')">回复(0)</p></div></dd>';
+                        str += '<div style="width:80%;height:160px;margin-left:20%; display:none;margin-top:30px;" id="' + data['id'] + '">';
+                        str += '<textarea name="" id="reply' + data['id'] + '" cols="30" rows="10" style="width:100%;height:90px; border:1px solid #e5e5e5"></textarea>';
+                        str += '<div class="publishSend" style="width:100%; " ><a class="sendBtn" onclick="reply(' + data['id'] + ',\''+data['name']+'\','+id+')">发布</a></div></div></li>';
+                        
+                        if(ifIdExist("discusslist"))
+                        {
+                            $('#discusslist').html(str+$('#discusslist').html());
+                        }
+                        else
+                        {
+                            //N
+                            $('#discusslist'+$('#itemId').val()).html(str+$('#discusslist'+$('#itemId').val()).html())
+                        }
+                        $('#reply' + commentID).val("");
+                        //$('#commentContent').val('');
+            } else if(data['code'] =='202') {
+                 if(IsPC()){
+                    document.body.id = 'msgBody';
+                }else{
+                    location.href='/HomeV2/Index/mobileLogin';
+                }
+            }else
+            {
+                alert(data['msg']);
+            }
+        }
+    });
+}
+
+function like(id, opt, type) {
+    
+    $.ajax({
+        url: "/Api/User/favorite",
+        type: 'get',
+        data: {'type': type, 'opt': opt, 'id': id},
+        dataType: 'json',
+        success: function (data) {
+            if (data['code'] == '000') {
+                if (type == 'com' &&opt==1) {/*评论的赞*/
+                    $('#like' + id).attr('onclick', "like("+id+",2,'com')");
+                    
+                    var num=parseInt($('#likeCot' + id).html());
+                    if(isNaN(num))
+                    {
+                        num=0;
+                    }
+                    num=num+1;
+                    var str="<span id='zanstyle'>已赞</span>(<span id='likeCot"+id+"'>"+num+"</span>)"
+                    $('#like' + id).html(str);
+                    return true;
+                }else if(type == 'com' &&opt==2){/*评论取消赞*/
+                    $('#like' + id).attr('onclick', "like("+id+",1,'com')");
+                    var num=parseInt($('#likeCot' + id).html());
+                    num=num-1;
+                    if(isNaN(num))
+                    {
+                        num=0;
+                    }
+                    var str="<span id='zanstyle'>赞</span>(<span id='likeCot"+id+"'>"+num+"</span>)"
+                    $('#like' + id).html(str);
+                }
+                else if (opt == 1) {/*文章赞*/
+                    //$('#zan').attr("style","background-color:#FF5151");
+                    
+                    if(ifIdExist("exchangeZan"))
+                    {
+                        $('#exchangeZan').attr("onclick","like("+id+", 2, '"+type+"')");
+                        $('#exchangeZan').css("background-position","0 0");
+                    }
+                    else
+                    {
+                        $('#exchangeZan'+id).attr("onclick","like("+id+", 2, '"+type+"')");
+                        $('#exchangeZan'+id).css("background-position","0 0");
+                        
+                        $('#exchangeZan'+id+'_mobile').attr("onclick","like("+id+", 2, '"+type+"')");
+                        $('#exchangeZan'+id+'_mobile').addClass("on");
+                    }
+                    
+                    
+
+                    //$('#exchangeZan').html("<a href=\"javascript:void(0);\" onclick=\"like($('#itemId').val(), 2, '"+type+"')\"><img src=\"/Static/HomeV2/images/mainzan.png\" alt=\"\"><\/a>");
+                    //$("#countZan").html(parseInt($("#countZan").html()) + 1);
+                    //   $(".heart").addClass("full");
+                    //  $("#likeNumber").html(parseInt($("#likeNumber").html()) + 1);
+                    //  $(".heart").parent().attr("onclick", "like($('#itemId').val(), 2, 'N')");
+                } else if (opt == 2) {/*文章取消赞*/
+                    
+                    if(ifIdExist("exchangeZan"))
+                    {
+                        $('#exchangeZan').attr("onclick","like("+id+", 1, '"+type+"')");
+                        $('#exchangeZan').css("background-position","");
+                    }
+                    else
+                    {
+                        $('#exchangeZan'+id).attr("onclick","like("+id+", 1, '"+type+"')");
+                        $('#exchangeZan'+id).css("background-position","");
+                        
+                        $('#exchangeZan'+id+'_mobile').attr("onclick","like("+id+", 1, '"+type+"')");
+                        $('#exchangeZan'+id+'_mobile').removeClass("on");
+                    }
+
+                    //$('#exchangeZan').html("<a href=\"javascript:void(0);\" onclick=\"like($('#itemId').val(), 1,'"+type+"')\"><img src=\"/Static/HomeV2/images/mainzan.png\" alt=\"\"><\/a>");
+                    //$("#countZan").html(parseInt($("#countZan").html()) - 1);
+                    // $(".heart").removeClass("full");
+                    //   $("#likeNumber").html(parseInt($("#likeNumber").html()) - 1);
+                    //    $(".heart").parent().attr("onclick", "like($('#itemId').val(), 1, 'N')");
+                }
+            } else if (data.code == '202') {
+                if(IsPC()){
+                    document.body.id = 'msgBody';
+                }else{
+                    location.href='/Home/Index/mobileLogin';
+                }
+                
+            } else {
+                alert(data['msg']);
+            }
+        }
+    });
+}
+comP = new Array();
+function comMore(id) {
+    if(typeof(id)=="undefined")
+    {
+        id=$('#itemId').val();
+    }
+    if(!comP[id])
+    {
+        comP[id]=2;
+    }
+    
+    
+    $.ajax({
+        url: "/Api/User/commentList",
+        type: 'get',
+        data: {'p': comP[id], 'id': id},
+        dataType: 'json',
+        success: function (data) {
+            if (data['code'] == '000') {
+                if (data['list'].length < 1) {
+                    
+                    if(ifIdExist("comMore"))
+                    {                 
+                        $('#comMore').html('没了');
+                        $('#comMore').attr('onclick', '');
+                    }
+                    else
+                    {
+                        $('#comMore'+id).html('没了');
+                        $('#comMore'+id).attr('onclick', '');
+                    }
+
+                } else {
+                    for (i = 0; i < data['list'].length; i++) {
+                        if (data['list'][i]['picture'] == '') {
+                            
+                            if(data['list'][i]['islogin']=='1')
+                            {
+                                 picture = '/Static/HomeV2/images/remark_loginned.jpg';
+                            }
+                            else
+                            {
+                                 picture = '/Static/HomeV2/images/remark_unlogin.jpg';
+                            }
+                            
+                           
+                        } else {
+                            picture = data['list'][i]['picture'];
+                        }
+
+                        if (data['list'][i]['parent_id'] != '0') {
+                            replys = '回复' + data['list'][i]['parentName'];
+                        } else {
+                            replys = '';
+                        }
+                        str = "";
+                        str += '<li style="margin-top:50px;"><dl><dt><img src="' + picture + '" alt=""></dt></dl><dd>';
+                        str += '<p><b style="float:left">' + data['list'][i]['name'] + replys + '</b>&nbsp;<span>' + data['list'][i]['ctime'] + '</span></p>';
+                        str += '<p class="xiangxi">' + data['list'][i]['content'] + '</p><div class="reSend">';
+                        if(data['list'][i]['liked']=='0'){
+                        str += '<p id="like' + data['list'][i]['id'] + '" onclick="like(' + data['list'][i]['id'] + ', 1, \'com\')">赞(<span id="likeCot' + data['list'][i]['id'] + '">' + data['list'][i]['countFav'] + '</span>)</p>';
+                        }else{
+                        str += '<p id="like' + data['list'][i]['id'] + '" onclick="like(' + data['list'][i]['id'] + ', 2, \'com\')">已赞(<span id="likeCot' + data['list'][i]['id'] + '">' + data['list'][i]['countFav'] + '</span>)</p>';
+                        }
+                        str += '<p onclick="showReply(' + data['list'][i]['id'] + ',\''+data['list'][i]['name']+'\')">回复(' + data['list'][i]['countComm'] + ')</p></div></dd>';
+                        str += '<div style="width:80%;height:160px;margin-left:20%; display:none;margin-top:30px;" id="' + data['list'][i]['id'] + '">';
+                        str += '<textarea name="" id="reply' + data['list'][i]['id'] + '" cols="30" rows="10" style="width:100%;height:90px; border:1px solid #e5e5e5"></textarea>';
+                        str += '<div class="publishSend" style="width:100%; " ><a class="sendBtn" onclick="reply(' + data['list'][i]['id'] +',\''+data['list'][i]['name']+'\','+id+')">发布</a></div></div></li>';
+                        if(ifIdExist('#discusslist'))
+                        {
+                            $('#discusslist').append(str);
+                        }
+                        else
+                        {
+                            //N
+                            $('#discusslist'+id).append(str);
+                        }
+                    }
+                    comP[id]++;
+                }
+            }
+        }
+    });
+}
+function subComment(id) {
+    
+    if(typeof(id)=='undefined')
+    {
+        id=$('#itemId').val();
+    }
+    
+    removeClick('btnComment',id);
+
+    var commentContent="";
+
+    if(ifIdExist('commentContent'))
+    {
+        commentContent=$('#commentContent').val();
+    }
+    else
+    {
+        commentContent=$('#commentContent'+id).val();
+    }
+    $.ajax({
+        url: "/Api/User/comment",
+        type: 'get',
+        data: {
+            'id': id,
+            'content': commentContent,
+            'commentId': $('#commentId').val()
+        },
+        dataType: 'json',
+        success: function (data) {
+            if (data['code'] == '000') {
+                
+                        var picture=data['picture'];
+                        var t="";
+                        if(picture=="")
+                        {
+                            //代表未登录
+                           t='<span class="YK_pic" onclick="checkLogin()"><p>登录找回红脸蛋</p><i></i></span>';
+                        }
+                        else
+                        {
+                            t='<img src="'+picture+'" alt="">';
+                        }
+                        
+                        str = "";
+                        str += '<li style="margin-top:50px;"><dl><dt>'+t+'</dt></dl><dd>';
+                        str += '<p><b style="float:left">' + data['name'] +'</b>&nbsp;<span>1秒前</span></p>';
+                        str += '<p class="xiangxi">' + commentContent + '</p><div class="reSend">';
+                        str += '<p id="like' + data['id'] + '" onclick="like(' + data['id'] + ', 1, \'com\')">赞(<span id="likeCot' + data['id'] + '">0</span>)</p>';
+                        
+                        str += "<p onclick='showReply(" + data['id'] + ",\""+data['name']+"\")'>回复(0)</p></div></dd>";
+                        str += '<div style="width:80%;height:160px;margin-left:20%; display:none;margin-top:30px;" id="' + data['id'] + '">';
+                        str += '<textarea name="" id="reply' + data['id'] + '" cols="30" rows="10" style="width:100%;height:90px; border:1px solid #e5e5e5"></textarea>';
+                        str += '<div class="publishSend" style="width:100%; " ><a class="sendBtn" onclick="reply(' + data['id'] + ',\''+data['name']+'\','+id+')">发布</a></div></div></li>';
+                        
+                        if(ifIdExist('discusslist'))
+                        {
+                            $('#discusslist').html(str+$('#discusslist').html());
+                            $('#commentContent').val('');
+                            $('#commentContent1').val('');
+                        }
+                        else
+                        {
+                            $('#discusslist'+id).html(str+$('#discusslist'+id).html());
+                            $('#commentContent'+id).val('');
+                        }
+                        
+
+            } else if (data.code == '202') {
+                 if(IsPC()){
+                    document.body.id = 'msgBody';
+                }else{
+                    location.href='/Home/Index/mobileLogin';
+                }
+            } else {
+                alert(data['msg']);
+            }
+            addClick('btnComment', "subComment("+id+")",id);
+        }
+    });
+}
+/*按钮失效*/
+function removeClick(id,itemId) {
+    if(ifIdExist(id))
+    {
+        $('#' + id).attr('onclick', '');
+    }
+    else
+    {
+        $('#' +id+""+itemId).attr('onclick', '');
+    }
+}
+/*按钮生效*/
+function addClick(id, fun,itemId) {
+    if(ifIdExist(id))
+    {
+        $('#' + id).attr('onclick', fun);
+    }
+    else
+    {
+        $('#' +id+""+itemId).attr('onclick', fun);
+    }
+}
+function IsPC() {
+    var userAgentInfo = navigator.userAgent;
+    var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
+    var flag = true;
+    for (var v = 0; v < Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) > 0) {
+            flag = false;
+            break;
+        }
+    }
+
+    return flag;
+}
+function goPage() {
+    if (IsPC()) {
+        $("#header").css('display', 'block');
+        $("#headera").css('display', 'none');
+    } else {
+        $("#header").css('display', 'none');
+        $("#headera").css('display', 'block');
+    }
+}
+
+function shareWeibo(title,url,picurl)
+{
+   var sharesinastring='http://v.t.sina.com.cn/share/share.php?title='+title+'&url='+url+'&content=utf-8&sourceUrl='+url+'&pic='+picurl;  
+   console.log("sdsdsd");
+   var w=window.open();
+   w.location=sharesinastring;
+}
+
+function ifIdExist(id)
+{
+    if(document.getElementById(id))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}

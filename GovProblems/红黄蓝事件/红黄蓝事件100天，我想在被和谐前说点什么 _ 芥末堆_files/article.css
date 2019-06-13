@@ -1,0 +1,311 @@
+.campaignBanner { width: 100%; height: auto; }
+.hotArticle { height: auto; margin-bottom: 10px;}
+#JMD_C_Pic { width: 100%; height: 100%; }
+.campaignRepat { width: 100%; height: auto; margin-top: 25px; overflow: hidden}
+.campaignRepat ul li { width: 24%; height: 150px; float: left; background: green }
+.campaignRepat ul li:nth-child(1) { float: left; }
+.campaignRepat ul li:nth-child(2), .campaignRepat ul li:nth-child(3) { margin-left: 16px; }
+.campaignRepat ul li:nth-child(4) { float: right; }
+.campaignRepat ul li a img { width: 100%; height: 100%; }
+.article_banner_liest ul li{width: 31.666%!important;height: auto!important;margin-left: 2.5%!important;}
+.article_banner_liest ul li:nth-child(1){margin-left: 0!important;}
+.article_banner_liest ul li img{width: 100%;height: auto;}
+.JMDarticle { width: 100%; height: 50px; line-height: 50px; background: #f6f6f6; border-left: 5px solid #0BAFA8; box-sizing: border-box; margin-top: 25px; font-size: 20px; text-indent: 20px; color: #666666; margin-bottom: 25px; overflow: hidden; }
+.campaignMainLeftContent dl { width: 100%; height: 180px; overflow: hidden; background: #FFF; margin-bottom: 10px; }
+.campaignMainLeftContent dl dt { width: 270px; height: 180px; overflow: hidden; float: left; }
+.campaignMainLeftContent dl dt a { display: block; width: 100%; height: 100%; background-size: cover; }
+.campaignMainLeftContent dl dd { margin-left: 295px; padding-right: 10px; box-sizing: border-box; }
+.campaignMainLeftContent dl dd h3 a { color: #333; line-height: 23px; margin-top: 17px; display: block; font-weight: 500; font-size: 18px; }
+.campaignMainLeftContent dl dd h3 a:hover { color: #666 }
+.articleIng { width: 65px; height: 26px; background: #00a185; display: block; text-align: center; line-height: 26px; color: #FFF; margin-top: 18px; font-size: 16px; }
+.articleIng:hover { color: #FFF;/* background: #027c67; */ }
+.zy { max-height: 77px; overflow: hidden; font-size: 14px; color: #999; margin-top: 5px; }
+.articleIngEnd { width: 65px; height: 26px; background: #CCC; display: block; text-align: center; line-height: 26px; color: #FFF; margin-top: 18px; font-size: 16px; }
+.articleIngEnd:hover { color: #fff }
+.onstick { border-left: none; border: 1px solid #E5E5E5; box-sizing: border-box; height: 50px; overflow: hidden; line-height: 50px }
+.yzu { margin-top: 5px; }
+/* 活动详情页面CSS */
+
+.JMD_C { width: 1200px; height: auto; margin: 20px auto 0 auto; }/*AD ->85*/
+.JMD_c_Banner { width: 1200px; height: 250px; }
+.JMD_c_Banner_a { display: block; width: 100%; height: 350px; background-position: center center; background-size: cover; bottom: 0; left: 0; }
+.JMD_c_Jd { width: 1200px; height: auto; background: #fff; margin-top: 20px; position: relative; overflow: hidden; padding-bottom: 20px; }
+.JMD_c_Jd_xs { width: 80px; height: 30px; display: block; background: #0BAFA8; position: absolute; left: 19px; top: 11px; color: #FFF; text-align: center; line-height: 30px; font-size: 16px; }
+.JMD_c_Jd_Cont { width: 60%; margin-left: 119px; padding-top: 6px; box-sizing: border-box; }
+.JMD_c_Jd_Cont h3 { font-size: 18px; color: #333; line-height: 27px; }
+.JMD_c_Jd_Cont_JD { width: 90%; height: 5px; padding-top: 40px; margin: 0 auto }
+.JMD_c_Jd_Cont_JD div { float: left; }
+.JMD_c_Jd_Cont_JD_1, .JMD_c_Jd_Cont_JD_3 { width: 40%; height: 5px; background: #D5D4D3; position: relative; }
+.JMD_c_Jd_Cont_JD_start, .JMD_c_Jd_Cont_JD_start1 { position: absolute; top: -30px; left: -28px; font-size: 14px; }
+.JMD_c_Jd_Cont_JD_end, .JMD_c_Jd_Cont_JD_end1 { position: absolute; top: -30px; right: -28px; font-size: 14px; }
+.JMD_c_Jd_Cont_JD_2 { width: 20%; height: 5px; background: #D5D4D3; position: relative; }
+.JMD_c_artic { width: 1200px; height: auto; padding-bottom: 20px; /*margin: 20px 0 0px 0;*/ }
+.JMD_c_Jd_Cont_JD_2_jz, .JMD_c_Jd_Cont_JD_1_bs { width: 16px; height: 16px; border-radius: 50%; background: #FFF; border: 2px solid #D5D4D3; display: block; box-sizing: border-box; position: absolute; top: -5px; left: -5px; z-index: 9 }
+.JMD_c_Jd_Cont_JD_2_start, .JMD_c_Jd_Cont_JD_3_js { width: 16px; height: 16px; border-radius: 50%; background: #FFF; border: 2px solid #D5D4D3; display: block; box-sizing: border-box; position: absolute; top: -5px; right: -5px; z-index: 9 }
+.Time_Address { margin-top: 20px; }
+.Time_Address p { margin-top: 5px; color: #333; font-size: 16px; }
+.JMD_c_Jd_Bm { width: 230px; height: 100%; position: absolute; right: 0; top: 0; }
+.JMD_c_Jd_Bm div { width: 100%; height: 50%; }
+.JMD_c_Jd_Bm div a { display: block; width: 100%; height: 26px; text-align: center; line-height: 26px; font-size: 26px; color: #FFF; font-family: "微软雅黑"; margin-top: -15px; position: absolute; top: 50%; }
+.JMD_c_Jd_Bm div:nth-child(1) { background: #e5e5e5; box-sizing: border-box; position: relative; }
+.JMD_c_Jd_Bm div:nth-child(1) div { height: 42px; margin-top: -21px; position: absolute; top: 50%; padding: 0 10px; }
+.JMD_c_Jd_Bm div:nth-child(1) div p:nth-child(1) { font-size: 15px; color: #333; text-align: center; }
+.JMD_c_Jd_Bm div:nth-child(1) div p:nth-child(2) { font-size: 26px; color: #333; text-align: center; }
+.JMD_c_Jd_Bm div:nth-child(2) { background: #FF4231; position: relative; }
+.content {/* padding: 1px 105px 50px 105px ; margin-bottom: 50px;*/ box-sizing: border-box; background: #FFF; margin-top: 20px; }
+.quan { border: 2px solid #00a185 }
+.gang { background: #00a185 }
+.Pass_futer { width: auto; }
+.Pass_futer li { width: 110px; height: 30px; line-height: 30px; background: #FFF; text-align: center; float: left; margin: 0 10px 10px 0; cursor: pointer; }
+.Pass_futer li a { color: #333; display: block; }
+.Pass_futer li:hover { background: #e5e5e5 }
+.Pass_futer li:nth-child(1) { background: #00a185; color: #FFF; -moz-user-select: none; }
+.Pass_futer li:nth-child(1) span { font-size: 18px; }
+.Pass_futer li:nth-child(1):hover { background: #00a185 }
+.Article_choose { background: #FF4231 }
+.Article_choose { color: #FFF }
+.Me_gh { width: 100%; height: auto; background: #FFF; padding: 15px 0 15px 30px; font-size: 18px; overflow: hidden; padding-bottom: 10px; box-sizing: border-box; }
+.Me_gh_Sol { color: #00a185; float: left; height: 100% }
+.Me_gh_list { width: 80%; float: left; }
+.Me_gh_list p a { display: block; color: #333; padding: 0px 0 10px 20px; box-sizing: border-box; }
+.Me_gh_list p a:hover { color: #999;/* background: #fafafa */ }
+.Me_gh p span a { color: #333; }
+.Me_gh p span a:hover { color: #333; }
+.unviable { display: block; }
+.unviable:hover { color: #FFF }
+.JMD_HD_bm { position: fixed; top: 0px; z-index: 999; margin-top: 0!important; background: #e5e5e5; height: auto }
+.JMD_HD_bm>.JMD_c_Jd_xs, .JMD_HD_bm>.JMD_c_Jd_Cont>.JMD_HD_Kd { display: none; }
+.JMD_HD_bm>.JMD_c_Jd_Cont>.Time_Address { margin-top: 0 }
+.JMD_HD_bm>.JMD_c_Jd_Bm>#JMD_HD_bM { height: 50%; }
+.Mob_JMD_hd { position: fixed; top: 30px; right: 20px; }
+.dialog_Main { width: 100%; height: auto; background: #FFF; overflow: hidden; padding-bottom: 30px; position: relative;}
+.dialog_YK { width: 100%; height: auto; }
+.dialog_Header { width: 95%; height: 50px; float: right; border-bottom: 1px solid #00a185; line-height: 50px; margin: 50px 0 60px 0; font-size: 22px; color: #00A185; }
+.dialog_List { width: 100%; float: left; }
+.dialog_List ul li { float: left; width: 360px; margin: 0 1.6% 20px 1.6%; height: 231px; overflow: hidden; font-size:17px; }
+.dialog_List_Main { width: 100%; overflow: hidden; }
+.dialog_List_Main_Left, .dialog_List_Main_Right { width: 180px; height: 231px; float: left; }
+.dialog_DY { width: 400px; height: 50px; position: absolute; right: 0; right: 20px; margin-top: 34px; overflow: hidden; z-index: 9; }
+.dialog_DY input { width: 280px; height: 48px; display: block; outline: none; border: none; background: #E5E5E5; text-indent: 10px; font-size: 16px; font-family: "微软雅黑"; position: absolute; left: 0; }
+.dialog_DY p { width: 120px; height: 100%; float: right; line-height: 50px; text-align: center; color: #fff; font-size: 16px; z-index: 99; background: #00a185; position: absolute; right: 0; }
+.dialog_DY p a { display: block; color: #FFF; width: 120px; position: absolute; right: 0; background: #00a185; }
+.dialog_DY_DL { animation: topleft 1s; animation-fill-mode: forwards; }
+.like_V{display: inline-block;width: 20px;height: 20px;background: url(../img/img_activity_heart.svg) no-repeat center;background-size:100% 100% ;float: left;}
+.Live_Like{position: absolute;top: 30px;right: 30px;height: 30px;line-height: 30px;}
+
+.liked_V{display: inline-block;width: 20px;height: 20px;background: url(../img/img_activity_heart_2.svg) no-repeat center;background-size:100% 100% ;float: left;}/*!important;*/
+.Like_Vio{color: #FFF;float: left;font-size: 16px;margin: 0 3px!important;}
+ @keyframes topleft {
+ from {
+left:0px
+}
+ to {
+left: -240px;
+}
+}
+@-moz-keyframes topleft {
+ from {
+left:0px
+}
+ to {
+left: -240px;
+}
+}
+@-o-keyframes topleft {
+ from {
+left:0px
+}
+ to {
+left: -240px;
+}
+}
+@-webkit-keyframes topleft {
+ from {
+left:0px
+}
+ to {
+left: -240px;
+}
+}
+.dialog_List_Main_Left { background: #f5f5f5; position: relative; display: block; min-width: 180px;  background-position: center center; background-size: auto 100%; background-repeat: no-repeat; bottom: 0; left: 0; }
+.dialog_List_Main_Right p:nth-child(1) { margin-top: 0; }
+.dialog_List_Main_Right { padding: 10px; box-sizing: border-box; position: relative; }
+.dialog_List_Main_Right p { margin-top: 6px; }
+.dialog_tittle, .dialog_contle { color: #00A185; }
+.dialog_List_Main_Right a { position: absolute; bottom: 0; display: block; width: 120px; height: 45px; background: #00A185; color: #FFF; text-align: center; line-height: 45px; }
+.dialog_List_Main_Left_Bottom { position: absolute; width: 120px; left: 0; bottom: -50px; width: 100%; height: 50px; background: #00a185; text-align: center; line-height: 30px; }
+.dialog_List_Main_Left_Bottom p { width: 90px; height: 26px; border: 1px solid #FFF; border-radius: 26px; margin: 12px auto 0 auto; color: #FFF; position: relative; font-size: 14px;line-height: 26px;}
+.dialog_List_Main_Left_Bottom p img { position: absolute; width: 20px; height: 20px; top: 2px; left: -25px; }
+.dialog_List_Main:hover .dialog_List_Main_Left_Bottom { animation: toBottom 1s; animation-fill-mode: forwards; }
+ @keyframes toBottom {
+ from {
+bottom:-50px
+}
+ to {
+bottom: 0;
+}
+}
+@-moz-keyframes toBottom {
+ from {
+bottom:-50px
+}
+ to {
+bottom: 0;
+}
+}
+@-o-keyframes toBottom {
+ from {
+bottom:-50px
+}
+ to {
+bottom: 0;
+}
+}
+@-webkit-keyframes toBottom {
+ from {
+bottom:-50px
+}
+ to {
+bottom: 0;
+}
+}
+
+
+.bntu_app_num{position: absolute;top: 50%;left: 120px;margin-top:0px;color: #FFF;}
+.bntu_app_num a{display: inline-block;margin-top: 3px;position: absolute;top: -6px;}
+.bntu_app_num span{margin-left: 124px;}
+.BT_YY_BQ{position: relative;}
+.BT_YY_BQ mark{width: 20px;height: 20px;display: block;background: none;position: absolute;top: 3px;left: 9px;}
+.BT_YY_BQ mark img{width: 100%;}
+
+.BT_YY_DH{
+    -webkit-animation: BT_yy  1s ease-in-out infinite;
+    -moz-animation: BT_yy  1s ease-in-out infinite;
+    -o-animation: BT_yy  1s ease-in-out infinite;
+    animation: BT_yy  1s ease-in-out infinite;
+    -webkit-animation-iteration-count:1;
+    -moz-animation-iteration-count:1;
+    -o-animation-iteration-count:1;
+    animation-iteration-count:1;
+    }
+
+
+@-webkit-keyframes BT_yy{
+		0%{transform:scale(1,1);opacity: 1;}
+		100%{transform:scale(10,10);opacity: 0;}
+	}
+	@-moz-keyframes BT_yy{
+		0%{transform:scale(1,1);opacity: 1;}
+		100%{transform:scale(10,10);opacity: 0;}
+	}
+	@-o-keyframes BT_yy{
+		0%{transform:scale(1,1);opacity: 1;}
+		100%{transform:scale(10,10);opacity: 0;}
+	}
+	@keyframes BT_yy{
+		0%{transform:scale(1,1);opacity: 1;}
+		100%{transform:scale(10,10);opacity: 0;}
+	}
+/*.BT_YY_BQ:before{content: "";background: url(../img/4.png);display: block;width: 20px;height: 20px; background-size: 100% 100%;position: absolute;top: 3px;left: 5px;}
+.BT_YY_BQ:hover:before {width: 300px;height: 300px;
+ -webkit-animation: bt_yy 1.2s ease-in-out infinite;
+    -moz-animation: bt_yy 1.2s ease-in-out infinite;
+    -o-animation: bt_yy 1.2s ease-in-out infinite;
+    animation: bt_yy 1.2s ease-in-out infinite;}
+
+@-webkit-keyframes bt_yy{
+		0%{width:20px;height: 20px;opacity: 1;}
+		100%{width:150px;height: 150px;opacity: 0;}
+	}
+	@-moz-keyframes bt_yy{
+		0%{width:20px;height: 20px;opacity: 1;}
+		100%{width:150px;height: 150px;opacity: 0;}
+	}
+	@-o-keyframes bt_yy{
+		0%{width:20px;height: 20px;opacity: 1;}
+		100%{width:150px;height: 150px;opacity: 0;}
+	}
+	@keyframes bt_yy{
+		0%{width:20px;height: 20px;opacity: 1;}
+		100%{width:150px;height: 150px;opacity: 0;}
+	}
+*/
+
+
+@media (max-width: 1370px) {
+.JMD_c_Banner, .JMD_C, .JMD_c_Jd, .JMD_c_artic { width: 980px; }
+.dialog_List ul li { margin: 20px 65px; }
+}
+
+@media (max-width: 1125px) and (min-width: 900px) {
+.JMD_c_Banner, .JMD_C, .JMD_c_Jd, .JMD_c_artic { width: 900px; }
+.dialog_List ul li { margin: 20px 45px; }
+}
+
+@media(max-width: 900px) {
+.dialog_List ul li { width: 100%; margin: 20px 0; padding: 0 10px; }
+.Pass_futer li { width: 20% }
+.campaignRepat { height: auto; }
+.hotArticle { height: auto; }
+.campaignBanner { height: auto; }
+.campaignRepat ul li { width: 45%; margin-bottom: 20px; height: 100px; }
+.campaignRepat ul li:nth-child(n) { float: left; margin-left: 0; }
+.campaignRepat ul li:nth-child(2n) { float: right; }
+.campaignMainLeftContent dl { height: 120px; position: relative; }
+.campaignMainLeftContent dl dt { width: 140px; height: 100px; padding: 10px; }
+.campaignMainLeftContent dl dd { font-size: 1.2rem; padding-left: 0px; line-height: 18px; width: 100%; position: absolute; left: 0px; top: 10px; padding: 0 5px 0 160px; box-sizing: border-box; margin-left: 0; }
+.campaignMainLeftContent dl dd h3 a { font-size: 16px; }
+.JMDarticle { margin-top: 0; margin-bottom: 0; /*margin-top: 20px; */height: 30px; font-size: 16px; line-height: 30px; }
+.main_right { display: none; }
+.indexMainLeft { width: 100%; }
+.articleIngEnd { width: 60px; height: 20px; font-size: 14px; line-height: 20px; }
+.articleIng { width: 60px; height: 20px; font-size: 14px; line-height: 20px; }
+.campaignMainLeftContent dl dd h3 a { margin-top: 0px; line-height: 20px; }
+.onstick { height: 30px; line-height: 30px }
+.JMD_c_Banner, .JMD_C, .JMD_c_Jd, .JMD_c_artic { width: 100%; }
+.JMD_c_Banner { margin-bottom: 20px; position: relative; display: block; }
+.JMD_c_Jd { display: none; }
+.JMD_c_artic { margin-top: 0; padding: 0px 2% 0 2%; box-sizing: border-box; }
+.Pass_futer { padding: 0; overflow: hidden; }
+.Pass_futer li { margin: 2% 2% }
+.Me_gh_list { width: 100% }
+.Me_gh_list p a { padding: 10px 0 10px 0px; }
+.aboutLab, .Article_C { padding: 0 5% }
+.Article_O { bottom: 20px; z-index: 9; }
+.JMD_C{padding-bottom: 50px;}
+.overlay { position: absolute; top: 0;  display: none;}
+.JMD_c_Banner_a { display: none; }
+.Pass_futer li:nth-child(1) { font-size: 16px; }
+.Pass_futer li a { font-size: 16px; }
+.dialog_DY { margin-top: 44px; right: 0px; height: 44px;}
+.dialog_DY p { width: 78px; line-height: 44px;}
+.dialog_DY input{height: 42px;}
+.dialog_DY p a { width: 78px; }
+.dialog_List_Main_Right { min-width: 180px; }
+.dialog_Header{    margin: 50px 0 0px 0;}
+.dialog_tittle{font-size: 14px;max-height: 60px;line-height: 20px;overflow: hidden;}
+.bntu_app_num{    left: 11px;}
+.bntu_app_num a{width: 70px;margin-top: 10px;}
+.bntu_app_num a img{width: 100%;}
+.bntu_app_num span{    margin-left: 70px;}
+.BT_YY_BQ mark{width: 13px;top: 1px;left: 4px;}
+}
+
+@media(max-width: 375px) {
+	.bntu_app_num a{width: 60px;}
+	.bntu_app_num span{margin-left: 58px;}
+}
+
+@media(max-width: 320px) {
+	.indexMenu li a{font-size: 14px;}
+.Pass_futer li { width: 29% }
+.campaignMainLeftContent dl dd h3 a { padding-right: 20px; max-height: 45px; overflow: hidden; line-height: 22px; }
+.dialog_List ul li{height: 167px;}
+.dialog_List_Main_Left, .dialog_List_Main_Right{width: 130px;    font-size: 13px;height: 167px;}
+.dialog_List_Main_Left{min-width: 130px;}
+.dialog_List_Main_Right{padding: 0 15px;}
+.dialog_List_Main_Right a{width: 120px;height: 30px;line-height: 30px;font-size: 14px;}
+.bntu_app_num{font-size: 12px;}
+.bntu_app_num a{width: 55px;}
+.bntu_app_num span{margin-left: 54px;}
+}

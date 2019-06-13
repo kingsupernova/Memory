@@ -1,0 +1,173 @@
+.A_content { width: 100%; height: auto; padding-bottom: 100px; }
+.A_Banner { width: 100%; height: 300px; margin-top: 0px; overflow: hidden; background-position: center center!important; background-size: cover!important; background-repeat: no-repeat!important; }
+.A_Banner img { width: 100%; height: auto }
+.A_Project { width: 1080px; height: auto; margin: 0 auto }
+.A_Menu { width: 100%; height: auto; display: block; box-sizing: border-box; padding: 30px 100px 20px 100px; text-align: center; margin: 0 auto; box-sizing: border-box; }
+.A_Menu buttom { background: #00a185; border-radius: 4px; color: #fff; display: inline-block; height: 30px; line-height: 30px; text-align: center; width: auto; padding:0 10px; }
+.A_Menu h1 { font-size: 24px; margin-bottom: 20px; font-weight: normal; color: #333; }
+.A_Menu p { line-height: 29px; font-size: 16px; color: #666; }
+.A_Menu p img { max-width: 100%; }
+.A_Project_1 { width: 1080px; height: auto; margin-top: 0px; }
+.A_Project_1 p { width: 100%; height: 42px; border-bottom: 1px solid #e8e9e9; margin-top: 8px;}
+.A_Menu_A { height: auto; display: block; }
+.A_Project_1 p span { display: inline-block; height: 42px; text-align: center; line-height: 42px; border-radius: 5px 5px 0 0; padding: 0 10px; box-sizing: border-box; font-size: 18px; color: #333 }
+.A_Project_Content { width: 100%; height: auto; overflow: hidden; margin-bottom: 20px; }
+.A_Project_Content dl { width: 300px; float: left; margin: 30px 30px 0 30px; }
+.A_Project_Content dl:first-child(3n) { clear: right; }
+.A_Project_Content dl dd { width: 100%; max-height: 115px; background: #FFF; /*border: 15px solid #FFF;*/padding: 7px; box-sizing: border-box; overflow: hidden; }
+.A_Project_Content dl dd a { color: #333; font-size: 15px; display: block; line-height: 20px; height: 41px; overflow: hidden; }
+.A_Project_Content dl dd a:hover { color: #0193f2 }
+.A_Project_Content dl dd span { display: block; color: #999; margin-top: 5px; font-size: 15px; }
+/* .A_Project_Content dl:first-child { margin-left: 0 } */
+.A_Project_Content dl dt { width: 100%; height: 200px; overflow: hidden; }
+.A_Project_Content dl dt a { display: block; width: 100%; height: 100%; background-position: center center; background-size: cover; bottom: 0; left: 0; }
+#wwwe { cursor: pointer; width: auto; height: 45px; margin: 30px auto; }
+.wwwe { cursor: pointer; }
+ @-webkit-keyframes twinkling {    /*透明度由0到1*/
+ 0% {
+ opacity:0; /*透明度为0*/
+}
+ 100% {
+ opacity:1; /*透明度为1*/
+}
+}
+@-moz-keyframes coolwpAnimation twinkling {    /*透明度由0到1*/
+ 0% {
+ opacity:0; /*透明度为0*/
+}
+ 100% {
+ opacity:1; /*透明度为1*/
+}
+}
+@-o-keyframes coolwpAnimation twinkling {    /*透明度由0到1*/
+ 0% {
+ opacity:0; /*透明度为0*/
+}
+ 100% {
+ opacity:1; /*透明度为1*/
+}
+}
+/* .A_Project_Content dl dt img{;position: relative;left: 50%;margin-left: -50%;} */
+.ZT_Q { width: 72%; height: auto; margin: 30px auto 0 auto; }
+.img { display: block; float: left; width: 80px; height: 80px; }
+.drag_module_main h3 { font-size: 30px; float: left; background: #f5f5f5; width: 480px; text-align: left }
+.drag_module_main h3 a { font-size: 30px; float: left; background: #f5f5f5; color: #333; text-align: left }
+.clear { clear: both; width: 1px; height: 0px; line-height: 0px; font-size: 1px; }
+#biaoty { overflow: hidden; }
+.drag_module_box { width: 100%; height: auto; margin: 25px 0 0 0; padding: 5px; }
+.drag_module_box1 { width: 100%; height: auto; margin: 25px 0 0 0; padding: 5px; }
+.drag_module_box1 input { margin-top: 24px }
+.drag_module_main { position: static; width: 100%; height: 80px; margin-bottom: 5px; border: 1px solid #f1f1f1; }
+.drag_module_main dl dt { width: 80px; height: 80px; float: left; }
+.drag_module_main dl dt img { width: 100%; height: 100%; }
+.drag_module_maindash { position: absolute; width: 739px; height: 80px; margin-bottom: 5px; border: 1px dashed blue; background: #ececec; opacity: 0.7; }
+.drag_module_maindashdl dl dt img { width: 80px; height: 80px; float: left; display: block; }
+.drag_module_main dl { position: relative; }
+.drag_module_main dl dd p { float: left; width: 400px; }
+.drag_module_main dl dd span { background: #9FF; }
+.drag_module_main dl dd span a { color: #FF0 }
+.drag_module_main input { height: 30px; border: 1px solid #999 }
+.drag_module_hide { width: 100%; height: 80px; margin-bottom: 5px; }
+.drag_module_dash { width: 739px; height: 80px; margin-bottom: 5px; border: 1px dashed #f00; }
+.drag_module_main a, .drag_module_dash a { width: auto; padding: 0 10px; height: 80px; background: #ccc; display: block; float: right; z-index: 99; line-height: 80px; font-size: 24px; text-align: center; margin-left: 5px; }
+.delRel { right: -80px; z-index: 99; top: 0; color: #F00; position: absolute; }
+.drag_module_main_span { display: block; width: 80px; height: 80px; float: right; }
+#wwwe img { height: 100%; width: auto; }
+.A_Project_More { width: 100%; overflow: hidden; }
+
+.A_Project_Load { width: 100px; height: 50px; margin: 10px auto; cursor: pointer; text-align: center; line-height: 30px; }
+.A_Project_Load img { width: 42px; height: 32px; }
+.xuankUp { -webkit-animation: coolwpUp 1s ease-in-out; -moz-animation: coolwpUp 1s ease-in-out; -o-animation: coolwpUp 1s ease-in-out; transform: rotate(180deg) }
+.xuankDown { -webkit-animation: coolwpDown 1s ease-in-out; -moz-animation: coolwpDown 1s ease-in-out; -o-animation: coolwpDown 1s ease-in-out; transform: rotate(0deg) }
+.z_d { display: block; width: 100px; height: 50px; background: #e5e5e5; line-height: 50px; text-align: center; border-radius: 5px; }
+.z_d:hover { background: #f6f6f6 }
+.Footer_Banner { width: 1080px; height: auto; }
+.Footer_Banner ul { width: 100%; }
+.Footer_Banner ul li { width: 520px; height: 120px; float: left; margin-bottom: 20px; }
+.Footer_Banner ul li:nth-child(2n) { float: right; }
+.Footer_Banner_B { width: 100%; height: 120px; position: relative; }
+.Footer_Banner_B a { display: block; width: 520px; height: 120px; background-position: center center; background-size: cover; bottom: 0; left: 0; }
+.A_list_Main{width: 1200px;height: auto;margin: 48px auto 0 auto;overflow: hidden;}
+
+.A_list_Main dl{width: 48%;height: 248px;float: left;margin-bottom: 30px;box-sizing:border-box;transition: all .1s ease-out;}
+.A_list_Main dl:nth-child(2n){float: right;}
+.A_list_Main dl dt {width: 100%;height: 180px;}
+.A_list_Main dl dt a{ 
+display: block;   
+	width: 100%;
+    height: 180px;
+    margin-top: 0px;
+    overflow: hidden;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.A_list_Main dl dd{font-size: 18px;line-height: 58px;height: 58px;overflow: hidden;padding: 0 0px 0 10px;box-sizing:border-box;}
+.A_list_Main dl:hover{box-shadow: 3px 10px 15px rgba(45,50,55,0.2);position: relative;margin-bottom: 30px;border: 1px solid #CCC;box-sizing:border-box;} 
+
+.A_Project_Menu{width: 100%;height: auto;overflow: hidden;}
+.A_Project_Menu ul{overflow: hidden;}
+.A_Project_Menu ul li{float: left;line-height: 40px;padding: 0 10px;background: #FFF;margin-right: 15px;margin-bottom: 5px;}
+.A_Project_Menu ul li:hover{background: }
+.Choose_Ap a{color: #00a185;}
+.Remove_Ap a{color: #999;}
+.position_Project{position: fixed;;top: 0;}
+.Project_Menu_c{background:#FFF;border-bottom: 1px solid #e8e9e9;box-sizing: border-box;}
+.Project_Menu_c ul li{line-height: 59px;box-sizing: border-box;}
+@media(max-width: 1370px) {
+	.A_list_Main{width: 980px;}
+}
+@media (max-width: 1125px) and (min-width: 900px){
+	.A_list_Main{width: 900px; }
+}
+@media(max-width: 900px) {
+	.A_list_Main {width: 98%; margin: 0 auto}
+
+	.A_list_Main dl{float: none;width: 100%;height: auto;border:1px solid #e5e5e5}
+	.A_list_Main dl:nth-child(2n){float: none;}
+	.A_list_Main dl dt{width: 100%;height: 80px;}
+	.A_list_Main dl dt a{
+		height: 80px;
+	}
+	.A_list_Main dl dd{height: auto;line-height: 25px;padding: 5px 10px;box-sizing:border-box;}
+	.A_Project_Menu{display: none;overflow: hidden;}
+	.A_Menu_A{overflow: hidden;}
+}
+@media(max-width: 1370px) {
+.A_Project { width: 980px; }
+.A_Banner { height: 250px; }
+.A_Project_Content dl dd { height: auto; }
+}
+
+@media(max-width: 980px) {
+	.A_Project_Content dl dt{
+		    width: 100%;
+    height: 250px;
+    overflow: hidden;
+	}
+.A_Banner { width: 100%; height: 100px; overflow: hidden;/*  background-size: 150% 100px; */ }
+.A_Project { width: 96%; margin: 0 2% }
+.A_Project_1 { width: 100%; }
+.A_Project_Content dl { width: 100%; }
+.A_Project_Content dl { margin: 15px 0 0 0; }
+.A_Project_Content dl:nth-child(n+3) { margin-right: 0; }
+.A_Project_Content dl:nth-child(2) { margin-left: 0; }
+.A_Project_Content dl:nth-child(3) { margin-left: 0; }
+.A_Project_Content dl:nth-child(3n) { margin-right: 0; }
+.A_Menu { padding: 30px 10px; height: auto; clear: both; display: block; }
+.Footer_Banner { width: 100% }
+.Footer_Banner ul li { float: none; width: 100%; height: 100px; }
+.Footer_Banner_B { width: 100%; height: 100px; position: relative; }
+.Footer_Banner_B a { width: 100%; background-size: 150% 100px; }
+.Footer_Banner ul li:nth-child(2) { float: none; }
+.A_Menu buttom{font-size: 16px}
+}
+
+@media (max-width: 667px) {
+.A_Menu { padding: 10px 0 0 0; }
+}
+
+@media (max-width: 320px) {
+.A_content { margin-top: 10px; }
+.A_Banner { background-size: 150% 80px; }
+}

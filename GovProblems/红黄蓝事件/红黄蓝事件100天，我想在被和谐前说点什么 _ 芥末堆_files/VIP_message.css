@@ -1,0 +1,167 @@
+html,body{font-family: "微软雅黑"}
+ a{text-decoration: none;}
+.VIP_wrap{width: 100%;height:100%;position: fixed; top: 0px; left: 0px;display: none;z-index: 10000;}
+.VIP_xx{width: 500px;height: 630px;border-radius: 8px;background: #FFF;position: absolute;top: 50%;left: 50%;margin: -350px 0 0 -250px;}
+.VIP_body{width: 380px;height: 630px;margin: 30px auto 0 auto}
+.VIP_body h2{font-size: 18px; border-bottom:1px solid #e5e5e5; color: #333;font-weight: 500;padding-bottom: 10px;box-sizing:border-box;}
+.VIP_body h2 span{border-bottom: 3px solid #16c98d;padding-bottom: 10px;box-sizing:border-box;}
+.VIP_body div{width: 100%;height: 50px;margin-top: 20px;position: relative;}
+
+
+
+.VIP_body input{width: 100%;height: 50px;border-radius: 6px;box-sizing:border-box;outline: none;border: none;border: 1px solid #e5e5e5;text-indent: 80px;font-size: 16px;line-height: 50px;position: relative;}
+
+.VIP_body label{width: 22px;height: 22px;content: "";position: absolute;left: 18px;top: 14px;background:url(//cdn.jiemodui.com/img/mingming/jiemodui/_20170912144008.png);background-size: 100%;z-index: 99}
+.VIP_fz1{background-position: 0 -3px!important}
+.VIP_fz2{background-position: 0 -25px!important}
+.VIP_fz3{background-position: 0 -47px!important}
+.VIP_fz4{background-position: 0 -69px!important}
+.VIP_fz5{background-position: 0 -130px!important}
+.VIP_fz6{background-position: 0 -91px!important}
+.VIP_fz7{background-position: 0 -110px!important}
+
+.VIP_fz5{height: 18px!important;top: 16px!important;}
+
+.input1:focus + .VIP_fz1{background-position: 0 -154px!important;}
+.input2:focus + .VIP_fz2{background-position: 0 -176px!important;}
+.input3:focus + .VIP_fz3{background-position: 0 -198px!important;}
+.input4:focus + .VIP_fz4{background-position: 0 -221px!important;}
+.input5:focus + .VIP_fz5{background-position: 0 -282px!important;}
+.input6:focus + .VIP_fz6{background-position: 0 -243px!important;}
+.input7:focus + .VIP_fz7{background-position: 0 -262px!important;}
+
+
+
+
+
+.VIP_body input:focus{border:1px solid #16c98d;text-indent: 80px;}
+
+
+
+.VIP_fz{display: block;width:70px;height: 50px;position: absolute;top: 0;left: 10px;line-height: 50px; color: #999}
+.VIP_body div span img{display: block;position: absolute;top: 14px;left: 10px;}
+.VIP_get{width: 120px;height: 50px;display: block;background: #424448;position: absolute;right: 0;top: 0;text-align: center;outline: none;text-decoration: none;font-size: 16px;color: #FFF;border-radius: 6px;line-height: 50px;}
+
+.VIP_get span{display: inline-block;width: 50px;line-height: 50px;text-align: center;}
+.VIP_next{width: 48%;height: 50px;border-radius: 6px;display: inline-block;background: #16c98d;float: right;/*position: absolute;right: 0;top: 0;*/line-height: 50px;font-size: 18px;color: #FFF;text-decoration: none;text-align: center;display: block;margin-top: 30px;}
+.VIP_next:hover{background: #0bd793;color: #FFF}
+.prive{float: left;background: #999}
+.pay_success{margin-top: 10px;margin:0 auto;float: none;}
+.prive:hover{background: #CCC;color: #FFF;}
+.VIP_agree{display: block;margin-top: 20px;font-size: 14px;}
+.VIP_Gn{width: 19px;height: 19px;border-radius: 5px;display: block; border: 1px solid #16c98d;background: url(../images/c.png);float: left;background-position: 0 16px;}
+.VIP_Gn_a{background-position:0 0; }
+.VIP_bs{margin-left:50px;padding-right:15px;box-sizing:border-box}
+/*.Vip_Close{width: 20px;height: 20px;border: 2px solid #e5e5e5;border-radius: 50%;display: block;text-align: center;line-height: 20px;color: #e5e5e5;position: absolute;left:50%;margin-left: -10px;bottom: 20px;background: none}
+*/
+/*.Vip_Close:hover{border: 2px solid #CCC;color: #CCC}*/
+.closePay{width: 30px;height: 30px;border-radius: 50%;background: red;}
+#divMsgBackf {
+    display: none;
+    position: fixed;
+    _position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    background: -moz-radial-gradient(50% 50%, #fff, #000);
+    background: #000;
+    background: -webkit-gradient(radial, 0 50%, 0 50%, from(#fff), to(#000));
+    opacity: 0.8;
+    filter: Alpha(opacity=50);
+    _display: block;
+    _left: -10000px;
+    z-index: 9998;
+}
+
+
+.VIP_masg{width: 500px;height: 360px;background: #FFF;position: absolute;left: 50%;top: 50%;margin: -180px 0 0 -250px;border-radius: 8px;}
+.VIP_masg_body{width: 380px;height: 300px;position: absolute;left: 50%;top: 50%;margin: -150px 0 0 -180px;}
+.VIP_masg_body div{height: 60px; border-bottom: 1px solid #e5e5e5;box-sizing:border-box;line-height: 60px;text-indent: 10px;font-size: 16px;color: #666}
+.VIP_mon{color: #16c98d;}
+.VIP_buy{display: block;width: 180px;height: 100%;background: #16c98d;float: left;text-decoration: none;color: #FFF;text-indent: 0px;text-align: center;font-size: 18px;border-radius: 5px;}
+.VIP_buy:hover{background: #0bd793}
+.VIP_qx{display: block;width: 180px;height: 100%;background: #999;float: right;text-decoration: none;color: #FFF;text-indent: 0px;text-align: center;font-size: 18px;border-radius: 5px;}
+
+
+.VIP_pay{width: 500px;height: 485px;background: #FFF;position: absolute;top: 50%;left: 50%;margin: -180px 0 0 -250px;border-radius: 8px;padding-bottom: 20px;}
+.VIP_pay_body{width: 400px;height: 290px;position: absolute;top: 34%;left: 50%;margin: -150px 0 0 -200px;border-radius: 5px;}
+.VIP_pay_body span{display: block; line-height: 23px;border-bottom: 1px solid #e5e5e5;padding-bottom: 10px;box-sizing:border-box;}
+.VIP_pay_body div p{margin-top: 10px;color:#333;font-size: 15px;}
+.VIP_pay_body div img{display: block;margin: 0 auto;margin-top: 25px;width:200px;height:200px;}
+.closePay,.Vip_Close{   
+ width: 26px;
+    height: 26px;
+    
+    display: block;
+    background: url(//cdn.jiemodui.com/img/mingming/jiemodui/shanchu.png);
+   
+   
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    margin-left: -13px;
+    background-size:100%; 
+    background-position: 0 0;
+}
+.closePay:hover,.Vip_Close:hover{background-position: 0 -26px;}
+
+
+
+
+.VIP_pay_b{width: 450px;height: 224px;position: absolute;top: 50%;left: 50%;margin: -165px 0 0 -250px;background: #FFF;border-radius: 8px;}
+.VIP_pay_b_body{width: 380px;height: 188px;position: absolute;top: 128px;left: 50%;margin: -125px 0 0 -190px;}
+.VIP_pay_b_body div{height: 50px;width: 100%; border-bottom: 1px solid #e5e5e5;box-sizing:border-box;line-height: 50px;}
+.VIP_pay_b_body div span{margin-left: 15px;}
+.VIP_pay_b_body div a{width: 100%;height: 50px;display: block;background: #16c98d;color: #FFF;text-decoration: none;text-align: center;line-height: 50px;font-size: 18px;border-radius: 5px;}
+.VIP_pay_b_body div a:hover{background: #0bd793}
+
+@media(max-width: 1024px) {
+	.VIP_wrap{background: #FFF;overflow: hidden;}
+	.VIP_xx,.VIP_masg,.VIP_pay,.VIP_pay_b{width: 100%;position:initial;margin: 50px auto 0 auto ;}
+	.VIP_body,.VIP_masg_body,.VIP_pay_body,.VIP_pay_b_body{width: 96%;height: auto;margin: 0 auto;position:initial;}
+	.VIP_fz{width: 80px;left: 5px}
+	.VIP_body div span img{left: 0px}
+	.VIP_bs{margin-left:25px;padding-right:5px;box-sizing:border-box}
+	.VIP_body input:focus{border:1px solid #16c98d;text-indent: 45px;}
+	.VIP_body input{text-indent:45px;}
+	.VIP_buy{width: 130px;}
+	.VIP_qx{width: 130px;}
+	.Vip_Close{margin-top: 0;}
+}
+@media(max-width: 900px) {
+    .VIP_xx, .VIP_masg, .VIP_pay, .VIP_pay_b{margin: 20px auto}
+    /* .VIP_body div.VIP_body div{
+        height:30px;}
+    .VIP_body input{
+        height:30px;
+        line-height: 30px;
+    }
+    .VIP_body label{
+        left:8px;
+        top:3px;
+    }
+    .VIP_fz6{
+        top:5px!important;}
+    .VIP_fz4{
+        top:5px!important;}
+    .VIP_fz3{
+        top:4px!important;}
+    .VIP_fz5{
+        top: 6px!important;
+    } */
+    .VIP_bs{
+        display: none}
+    /* .VIP_next{
+        height: 30px;
+        line-height: 30px;
+    } */
+    .VIP_body{
+        overflow-y: inherit;
+    }
+}
+
+
+
+

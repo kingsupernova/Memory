@@ -1,0 +1,64 @@
+﻿/**
+ args {
+    url
+    type 默认值为get
+    success Function
+    data {key:value}
+    cache Boolean true表示缓存,默认值为false
+    datatype 默认 text text|xml
+     async:false 默认是true；
+}
+ */
+function ajax(args) {
+    //创建xhr对象
+    function createXHR() {
+        return window.XMLHttpRequest?
+            new XMLHttpRequest():
+            new ActiveXObject("Microsoft.XMLHTTP");//IE6
+    }
+
+    //拼接参数
+    function params(o) {
+        var a=[];
+        for (var i in o) {
+            a.push(encodeURIComponent(i)+"="+encodeURIComponent(o[i]));
+        }
+        return a.join("&");
+    }
+
+    var xhr = createXHR();
+
+    args.type=args.type || "get";
+
+    if (!args.cache) {
+        args.data.cache = (new Date()*1);
+    }
+
+    var data_str = params(args.data)
+
+    if (/get/i.test(args.type) && data_str) {
+        args.url += args.url.indexOf("?")<0 ? '?' : '&';
+        args.url += data_str;
+    }
+    args.async=args.async || true;
+    xhr.open(args.type,args.url,args.async);
+
+    xhr.onreadystatechange=function () {
+        if (xhr.readyState===4 && xhr.status===200) {
+            if(!args.datatype || args.datatype.toLowerCase() === 'text')
+            {
+                args.success(xhr.responseText);
+            }else{
+                args.success(xhr.responseXML);
+            }
+        }
+    };
+
+    if (/post/i.test(args.type)) {
+        xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+        xhr.send(data);
+    } else {
+        xhr.send();
+    }
+}
+

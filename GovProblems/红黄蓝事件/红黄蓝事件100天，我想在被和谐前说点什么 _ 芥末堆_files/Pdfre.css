@@ -1,0 +1,54 @@
+.Pdf_free_Time{width: 550px;height: 80px;border: 1px solid #CCC;box-sizing:border-box;float: right;margin-top: 20px;position: relative;}
+.Pdf_free_Time mark{width: 32px;height: 32px;float: left;background: #FFF;position: absolute;top: 23px;left: 20px;}
+.Pdf_free_Time mark img{width: 100%;}
+.Pdf_free_Time p{margin-top: 0;margin-left: 80px;float: left;line-height: 80px;}
+.Pdf_free_Time a{display: block;width:90px;height: 50px;background: #999;/*position: absolute;top: 15px;right: 30px;*/ float:right; margin:15px 15px 0 0;text-align: center;line-height: 50px;border-radius: 6px;font-size: 16px;color: #FFF}
+.Pdf_free_Time a:hover{color: #FFF;}
+.Pdf_free_Time_Start{background: #00a185;}
+/*.newContent{overflow: hidden;}*/
+.w_o{width: 550px;float: right;position: relative;padding: 10px;box-sizing: border-box;margin-top: 10px;background: #e5e5e5;}
+.w_o img{margin: 0 auto 0 20px;float: left;width: 180px;height: auto;}
+.w_o p{width: 300px;float: right;}
+.Finish_Over{background: #00a185;}
+.w_o_btn{margin: 0 auto;width: 200px;overflow: hidden;float: right;}
+.YK_monkey,.BG_monkey{position: absolute;bottom: 75px;font-size: 14px;}
+.YK_NU,.BG_NU{position: absolute;bottom: 50px;font-size: 14px;}
+@media (max-width: 900px) {
+    .Pdf_free_Time{width: 100%;display: block;background: #FFF;margin-top: 0;}
+    .Pdf_free_Time mark{left: 15px;}
+    .Pdf_free_Time p{margin-left: 50px;}
+    .Pdf_free_Time a{width: 80px;right: 5px;}
+    .newContent_J_Y{width: 100%;padding: 10px 10px;box-sizing: border-box;}
+    #newContent_J_T,#newContent_J_R{display: none;}
+    #newContent_J_S{float: left;}
+    #newContent_J_SJ{float: right;clear: inherit;}
+    
+    
+  .w_o{width: 100%;float: right;position: relative;padding: 10px;box-sizing: border-box;margin-top: 10px;background: #e5e5e5;}
+.w_o img{margin: 0 auto;float:initial;}
+.w_o p{width: 100%;margin-bottom: 10px;}
+.Finish_Over{background: #00a185;}
+.w_o_btn{float: initial;}
+.Pdf_free_Time a{margin: 15px 10px 0 0; font-size: 12px;width: 60px;}
+}
+@media (max-width: 375px) {
+	.Pdf_free_Time{height: 50px;}
+	.Pdf_free_Time mark{   top: 10px;left: 5px;}
+	.Pdf_free_Time p{margin-left: 50px;font-size: 12px;    line-height: 50px;}
+	.Pdf_free_Time a{     width: 60px;;top: 11px;      height: 30px;  line-height: 30px;font-size: 14px;margin:10px 15px 0 0; ;}
+	
+
+}
+@media (max-width: 320px) {
+	.Pdf_free_Time{height: 50px;}
+	.Pdf_free_Time mark{   top: 10px;left: 5px;}
+	.Pdf_free_Time p{margin-left: 43px;font-size: 12px;    line-height: 50px;}
+	.Pdf_free_Time a{  width: 60px;  top: 11px;      height: 30px;  line-height: 30px;font-size: 14px;margin:11px 4px 0 0; }
+	.YK_monkey, .BG_monkey{bottom: 53px;}
+	.YK_NU, .BG_NU{    bottom: 35px;}
+
+}
+
+
+
+

@@ -1,0 +1,437 @@
+
+$(function () {
+    function showlist(val) {
+        if (val == '') {
+            $(".searchlist").hide();
+            return false;
+        }
+        var searchList;
+        $.ajax({
+            url: "/Api/Config/searchItem",
+            type: "GET",
+            success: function (msg) {
+                searchList = msg;
+
+                $('.searchlist ul').empty();
+                for (var i = 0; i < searchList.length; i++) {
+                    var searchText = val;
+                    $('.searchlist ul').append('<li type="' + searchList[i].item_type + '"><span><strong>' + searchList[i].item_name + '</strong></span><span>中搜索</span><span><strong>' + searchText + '</strong></span></li>');
+                }
+
+                $('.searchlist').show();
+                $('.searchlist ul li').click(function () {
+                    location.href = "/Search/" + $(this).attr("type") + "/" + $(this).find("strong").last().html();
+                })
+            }
+        });
+    }
+
+
+    $("#btn1").on('click', function () {
+        if ($("#userName").val().length < 1) {
+            $("#login_cuo_email").css('display', 'block');
+            $("#login_cuo_email").html("请输入您的邮箱！");
+            $("#userName").css('border-color', '#f00');
+            $("#right").css('background-position', '0 100%');
+            $("#right").css('opacity', '1');
+            return false;
+        }
+        if ($("#userPwd").val().length < 1) {
+            $("#login_cuo_Pwd").css('display', 'block');
+            $("#login_cuo_Pwd").html("请输入您的密码！")
+            $("#userPwd").css('border-color', '#f00');
+            $("#false").css('background-position', '0 100%');
+            $("#false").css('opacity', '1');
+            return false;
+        } else if ($("#userPwd").val().length < 6 || $("#userPwd").val().length > 18) {
+            $("#login_cuo_Pwd").css('display', 'block');
+            $("#login_cuo_Pwd").html("您输入的密码长度不对！")
+            $("#userPwd").css('border-color', '#f00');
+            $("#false").css('background-position', '0 100%');
+            $("#false").css('opacity', '1');
+            return false;
+        }
+
+        $.ajax({
+            url: "/Api/User/loginByEmail",
+            type: 'get',
+            async: false,
+            data: {email: $("#userName").val(), password: $.md5($("#userPwd").val())},
+            dataType: 'json',
+            success: function (data) {
+                if (data['code'] === '000') {
+                    $("#userName").css('border-color', '#00a185');
+                    $(".right").css('background-position', '0 0');
+                    $(".right").css('opacity', '1');
+
+                    $("#userPwd").css('border-color', '#00a185');
+                    $(".flase").css('background-position', '0 0');
+                    $(".flase").css('opacity', '1');
+                    
+                    var redirect_url=$("#redirect_url").val();
+                    if(redirect_url=="")
+                    {
+                        window.location.reload();
+                    }
+                    else
+                    {
+                        window.location.href=redirect_url;
+                    }
+                    $(".searchlist").css('left', '530px;')
+                } else {
+                    $("#login_cuo_Pwd").css('display', 'block');
+                    $("#login_cuo_Pwd").html("用户名或密码错误");
+                    $("#userName").css('border-color', '#f00');
+                    $("#right").css('background-position', '0 100%');
+                    $("#right").css('opacity', '1');
+
+                    $("#userPwd").css('border-color', '#f00');
+                    $("#false").css('background-position', '0 100%');
+                    $("#false").css('opacity', '1');
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert(XMLHttpRequest.status);
+                alert(XMLHttpRequest.readyState);
+                alert(textStatus);
+            }
+        });
+    });
+
+});
+function setcookie(name, value) {
+    var Days = 0.5;
+    var expa = new Date();
+    expa.setTime(expa.getTime() + Days * 24 * 60 * 60 * 1000);
+    document.cookie = name + "=" + escape(value) + ";expires=" + expa.toGMTString();
+}
+
+function getcookie(name) {
+    var arr = document.cookie.match(new RegExp("(^| )" + name + "=([^;]*)(;|$)"));
+    if (arr != null) {
+        return (arr[2]);
+    } else {
+        return "";
+    }
+}
+/*投稿笔名检查*/
+function wNameCheck() {
+    $.ajax({
+        url: "/Api/User/wNameCheck",
+        type: 'get',
+        async: false,
+        data: {},
+        dataType: 'json',
+        success: function (data) {
+            if (data['code'] == '000') {
+                $('#addtempStatus').val("5");//新增投稿状态必须为5
+                //document.body.id = 'msgContent';//投稿窗口
+                add();
+            } else if (data['code'] == '202') {
+                window.location.href='/Login';
+                //document.body.id = 'msgBody';//登录窗口
+            } else if (data['code'] == '109') {
+                $('#myArticle').hide();
+                //document.body.id = 'msgContentj';//笔名窗口
+                alert("投稿，需要用笔名~");
+                window.location.href='/HomeV2/User/writer?flag=one';
+            }else if(data['code']=="203"){
+                $("#userAddWriter").attr("onclick","writerUpdate()");
+                alert("为了方便我们与您更好的联系，请您绑定您的手机");
+                //document.body.id = 'msgContentj';//笔名窗口
+                window.location.href='/HomeV2/User/writer?flag=two';
+            }
+        }
+    });
+
+}
+/*新增项目操作*/
+function add() {
+    name = $('#additem').val();
+    status = $('#addtempStatus').val();
+    type = $('#addtemp').val();
+    /*if (name == '') {
+        alert('标题不能为空');
+        return false;
+    }*/
+    $.ajax({
+        url: "/Api/Editer/addItem",
+        type: 'get',
+        async: false,
+        data: {type: type, name: name, status: status},
+        dataType: 'json',
+        success: function (data) {
+            if (data['code'] == '000') {
+                document.body.id = '';
+                window.open("/Home/Edit/index/id/" + data['itemId']);
+            }
+            else {
+                alert(data.msg);
+            }
+        }});
+}
+
+/*添加作者*/
+function addWriter_pen() {
+    name = $('#addName').val();
+    brief = $('#addbrief').val();
+    mail = $('#addmail').val();
+    mailAuth = $('#mailAuth').attr("checked");
+    weibo = $('#weibo').val();
+    weiboAuth = $('#weiboAuth').attr("checked");
+    weixin = $('#weixin').val();
+    weixinAuth = $('#weixinAuth').attr("checked");
+    picture = $('#addpicture').val();
+    mobile = $("#pen_mobileNew").val();
+    code = $("#pen_codeNew").val();
+    if (mail == '' && weibo == '' && weixin == ''&&mobile=="") {
+        alert('至少有一种联系方式');
+        return false;
+    }
+
+    if(mobile==""){
+        alert("请输入手机号");
+        return;
+    }
+
+    $.ajax({
+        url: "/Api/User/writerName",
+        type: 'get',
+        async: false,
+        data: {
+            name: name,
+            brief: brief,
+            mail: mail,
+            mailAuth: mailAuth,
+            weibo: weibo,
+            weiboAuth: weiboAuth,
+            weixin: weixin,
+            weixinAuth: weixinAuth,
+            picture: picture,
+            mobile:mobile,
+            code:code,
+            itemId: $('#itemId').val(),
+            type: $('#itemType').val()
+        },
+        dataType: 'json',
+        success: function (data) {
+            //alert(data.msg);
+            if (data['code'] == '000') {
+                $('#addtempStatus').val("5");
+                add();
+            } else {
+                alert(data['msg']);
+            }
+        }
+    });
+}
+
+/**
+ * 修改作者
+ */
+function writerUpdate() {
+    name = $('#addName').val();
+    brief = $('#addbrief').val();
+    mail = $('#addmail').val();
+    mailAuth = $('#mailAuth').attr("checked");
+    weibo = $('#weibo').val();
+    weiboAuth = $('#weiboAuth').attr("checked");
+    weixin = $('#weixin').val();
+    weixinAuth = $('#weixinAuth').attr("checked");
+    picture = $('#addpicture').val();
+
+    mobile = $("#pen_mobileNew").val();
+    code = $("#pen_codeNew").val();
+
+
+    if (mail == '' && weibo == '' && weixin == ''&&mobile=="") {
+        alert('至少有一种联系方式');
+        return false;
+    }
+
+    if(mobile==""){
+        alert("请输入手机号");
+        return;
+    }
+
+
+    $.ajax({
+        url: "/Api/User/updateWriterName",
+        type: 'get',
+        async: false,
+        data: {
+            name: name,
+            brief: brief,
+            mail: mail,
+            mailAuth: mailAuth,
+            weibo: weibo,
+            weiboAuth: weiboAuth,
+            weixin: weixin,
+            weixinAuth: weixinAuth,
+            picture: picture,
+            mobile:mobile,
+            code:code,
+            itemId: $('#itemId').val(),
+            type: $('#itemType').val()
+        },
+        dataType: 'json',
+        success: function (data) {
+            if (data['code'] == '000') {
+                document.body.id = '';
+                window.location.reload();
+            } else {
+                alert(data['msg']);
+            }
+        }
+    });
+}
+
+
+
+
+/*文件上传动作*/
+function wiconUploads() {
+    $("#wiconUpload").click();
+}
+/*选择头像后立即上传*/
+jQuery('#formWriter').change(function () {
+    $('#formWriter').submit();
+});
+/*投稿提交操作*/
+function addNews() {
+    title = $('#addNews').val();
+    if (title == "") {
+        alert('标题不能为空');
+        return false;
+    }
+    $.ajax({
+        url: "/Api/User/addNews",
+        type: 'get',
+        async: false,
+        data: {title: title},
+        dataType: 'json',
+        success: function (data) {
+            if (data['code'] == '000') {
+                location.href = "/Home/Edit/index/?id=" + data['id'];
+            } else {
+                alert(data['msg']);
+            }
+        }
+    });
+}
+function uploadSuccess(code, data) {
+    if (code == '000') {
+        arr = eval("(" + data + ")");
+        thumb_path = arr['thumb_path'];
+        $('#thumb1').attr('src', thumb_path);
+        $('#thumb2').attr('src', thumb_path);
+        $('#iconNew').val(thumb_path);
+        $('#wthumb1').attr('src', thumb_path);
+        $('#wthumb2').attr('src', thumb_path);
+        $('#addpicture').val(thumb_path);
+    } else {
+        //alert('上传失败，请稍后重试');
+    }
+}
+function loginOut() {
+    $.ajax({
+        url: "/Api/User/loginOut",
+        type: 'get',
+        data: {},
+        dataType: 'json',
+        success: function (data) {
+            window.location.href="/";
+        }
+    });
+}
+;
+function isEmail(str) {
+    var reg=/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/
+    //var reg = /^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/; 
+    //return false;
+    return reg.test(str);
+}
+
+$(".firstPagr li").on('mouseover', function () {
+    /**/
+    $(this).addClass('firstHover').siblings().removeClass('firstHover');
+    /* alert(123)*/
+});
+$("#searchinputDetail").die().live("keydown", function (event) {
+    if (event.keyCode == 13) {
+        search('detail');
+    }
+});
+//为了搜索不跳转爱更
+// $("#searchinput").die().live("keydown", function (event) {
+//     if (event.keyCode == 13) {
+//         search('all');
+//     }
+// });
+$("#mobileSearch").die().live("keydown", function (event) {
+    if (event.keyCode == 13) {
+        search('mobile');
+    }
+});
+
+
+function IsPC() {
+    var userAgentInfo = navigator.userAgent;
+    var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
+    var flag = true;
+    for (var v = 0; v < Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) > 0) {
+            flag = false;
+            break;
+        }
+    }
+    return flag;
+}
+
+
+$("#menuD").on('click', function () {
+    $("#menuK").slideToggle("normal");
+})
+
+
+var inner = $("#discusslist li").length
+if (inner < 1) {
+    $("#dissaussAll").css('display', 'none')
+    $("#comMore").css('display', 'none')
+} else {
+    $("#dissaussAll").css('display', 'block')
+    $("#comMore").css('display', 'block')
+}
+
+$("#searchBtn").click(function () {
+    $("#searchResult").animate({right: "0px"}, "slow");
+    $("#menuK").slideUp("normal");
+
+});
+$("#closeSearch").click(function () {
+    $("#searchResult").animate({right: "-100%"}, "slow");
+});
+$("#headerBottom li").click(function () {
+    $(this).addClass("apendstyle").siblings().removeClass('apendstyle')
+});
+
+function search(type){
+    if(type=='all'){
+        if($("#searchinput").val()=='') {
+            return false;
+        }
+        location.href = "/searchV2/N/" + $("#searchinput").val();
+    }
+    if(type=='detail'){
+         if($("#searchinputDetail").val()==''){
+             return false;
+         }
+         location.href = "/searchV2/N/" + $("#searchinputDetail").val();
+    }
+    if(type=='mobile'){
+         if($("#mobileSearch").val()==''){
+            return false;
+         }
+         location.href = "/searchV2/N/" + $("#mobileSearch").val();
+    }
+}

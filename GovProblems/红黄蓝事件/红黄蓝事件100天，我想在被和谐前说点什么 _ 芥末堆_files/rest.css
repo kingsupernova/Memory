@@ -1,0 +1,18 @@
+﻿a, address, b, big, blockquote, body, center, cite, code, dd, del, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, label, legend, li, ol, p, pre, small, span, strong, u, ul, var { margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; font-family: "Microsoft YaHei", "微软雅黑", "Arial"; }
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+a, li { list-style: none; text-decoration: none; }
+a { cursor: pointer; }
+a:hover { color: #00a185; }
+a:active { color: #00a185; }
+input { outline: none; }
+html, body { width: auto; }
+html { min-height: 100%; _height: 100%; }
+body { margin: 0; padding: 0; min-height: 100%; _height: 100%; }
+h1 { font-weight: normal; }
+html { font-family: "Microsoft YaHei", "微软雅黑", "Arial"; color: #333; }
+body { background: #F0F2F5; }
+img { margin: 0 auto; padding: 0; border: 0; display: block; vertical-align: bottom; }
+td { border: solid #e5e5e5; border-width: 0px 1px 1px 0px; padding: 10px 0px; }
+table { border: solid #ddd; border-width: 1px 0px 0px 1px; text-align: center; font: 14px/1.55 Arial, Helvetica, sans-serif; color: #666; }
+html, body { height: 100%; width: 100%; }
