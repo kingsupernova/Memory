@@ -8,4 +8,15 @@ I wasted most of my time on those websites, from now on, I will record some **`"
 
 # [twitter](http://www.twitter.com)
 
+> 1
+>> 2
+>>> 3
+>>>> 4
+
+'''diff
++ time flies
+- bullshit
+
+'''
+
 - to be continued.
