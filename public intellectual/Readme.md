@@ -1,6 +1,6 @@
 I wasted most of my time on those websites, from now on, I will record some **"interesting"** posts.
 
-# [豆瓣](www.douban.com)
+# [豆瓣](http://www.douban.com)
 
 # [知乎](www.zhihu.com)
 
