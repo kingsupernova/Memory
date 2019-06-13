@@ -2,10 +2,10 @@ I wasted most of my time on those websites, from now on, I will record some **"i
 
 # [豆瓣](http://www.douban.com "have a try")
 
-# [知乎](www.zhihu.com)
+# [知乎](http://www.zhihu.com)
 
-# [微博](www.weibo.com)
+# [微博](http://www.weibo.com)
 
-# [twitter](www.twitter.com)
+# [twitter](http://www.twitter.com)
 
 - to be continued.
