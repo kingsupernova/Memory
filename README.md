@@ -9,6 +9,7 @@
 > 一些普通人，到了网上却能指点江山，阴阳怪气(to be defined)
 
 **TODO**
+
 - [ ] 1  
 - [ ] 2
 
@@ -29,7 +30,9 @@
 -
 
 >-
+>
 >>-
+>>
 >>>-
 >>>
 >>>>-
@@ -46,14 +49,5 @@
 
 if __name__ == '__main__':
 	main()
-```
-
-
-
-
-
-```diff
-+ i can see nothing 
-- i can not see the source code
 ```
 
